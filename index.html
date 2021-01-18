@@ -135,7 +135,7 @@ I’m passionate about projects and companies that work to effect social, econom
     <h3>Last Updated</h3>
     <p class=\"timestamp\">
     <script type="text/javascript">
-      var t = "Sun Jan 17, 2021 23:51 EST";
+      var t = "Tue Feb 11, 2020 23:51 PST";
       var ta = time_ago(t);
       document.open();
       if (!!ta)
@@ -148,16 +148,208 @@ I’m passionate about projects and companies that work to effect social, econom
   </section>
   <section>
     <h3>Copyright</h3>
-    <p>&copy; NAME, 2021</p>
+    <p>&copy; FIRST LAST, 2020</p>
   </section>
 </footer>
 </nav>
       <div class="gutter"></div>
       <div id="page" class="full">
-      <!-- page header -->
-      <header></header>
-      </div>
-      <div class="gutter"></div>
+	<!-- page header -->
+	<header>
+	</header>
+		<article>
+    <div class="main">
+<section class="hide ">
+    <h3 id="tweets">Tweets</h3>
+<script id="spec_-161a6779-21c0-4105-a0ed-d7eebda1052a" data-src="year.vl.json" type="text/json">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
+  "height": 200,
+  "data": {
+    "url": "data/monthly_tweets.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date"
+      }
+    }
+  },
+  "mark": {
+    "type": "area",
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "timeUnit": "yearmonth",
+      "field": "date",
+      "type": "temporal",
+      "axis": {
+        "grid": false,
+        "title": null,
+        "tickCount": 9,
+        "format": "%Y"
+      },
+      "scale": {
+        "round": true,
+        "nice": {"interval": "year", "step": 1},
+        "clamp": true,
+        "domain": [
+            {"year": 2010, "month": "jan", "date": 1},
+            {"year": 2019, "month": "jan", "date": 1}
+        ]
+      }
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "axis": null
+    },
+    "color": {
+      "value": "#55ACEE"
+    }
+  },
+  "config": {
+    "view": {
+      "strokeOpacity": 0
+    },
+    "mark": {
+      "fillOpacity": 0.3
+    }
+  }
+}</script>
+<div class="visualization overflow" id="vis_-161a6779-21c0-4105-a0ed-d7eebda1052a"></div>
+</section>
+<section class="hide ">
+    <h3 id="facebook-messages">Facebook Messages</h3>
+<script id="spec_-3928f690-231b-491a-a9d2-203fdcef5470" data-src="year.vl.json" type="text/json">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
+  "height": 200,
+  "data": {
+    "url": "data/monthly_messages.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date"
+      }
+    }
+  },
+  "mark": {
+    "type": "area",
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "timeUnit": "yearmonth",
+      "field": "date",
+      "type": "temporal",
+      "axis": {
+        "grid": false,
+        "title": null,
+        "tickCount": 9,
+        "format": "%Y"
+      },
+      "scale": {
+        "round": true,
+        "nice": {"interval": "year", "step": 1},
+        "clamp": true,
+        "domain": [
+            {"year": 2010, "month": "jan", "date": 1},
+            {"year": 2019, "month": "jan", "date": 1}
+        ]
+      }
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "axis": null
+    },
+    "color": {
+      "value": "#3B5998"
+    }
+  },
+  "config": {
+    "view": {
+      "strokeOpacity": 0
+    },
+    "mark": {
+      "fillOpacity": 0.3
+    }
+  }
+}</script>
+<div class="visualization overflow" id="vis_-3928f690-231b-491a-a9d2-203fdcef5470"></div>
+</section>
+<section class="hide ">
+    <h3 id="weekday-caffeination">Weekday Caffeination</h3>
+<script id="spec_-64b05e86-f517-48ea-9e88-29390a20f53e" data-src="hour.vl.json" type="text/json">{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "autosize": {
+    "type": "pad",
+    "resize": true
+  },
+  "height": 200,
+  "data": {
+    "url": "data/checkins.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.category==='Coffee Shop'"
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "line": true
+  },
+  "encoding": {
+    "x": {
+      "timeUnit": "hours",
+      "field": "date",
+      "type": "temporal",
+      "axis": {
+        "grid": false,
+        "title": null,
+        "format": "%-I %p"
+      },
+      "scale": {
+        "nice": {"interval": "hour", "step": 4}
+      }
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "axis": null
+    },
+    "color": {
+      "value": "#7B3E19"
+    }
+  },
+  "config": {
+    "view": {
+      "strokeOpacity": 0
+    },
+    "mark": {
+      "fillOpacity": 0.3
+    }
+  }
+}</script>
+<div class="visualization overflow" id="vis_-64b05e86-f517-48ea-9e88-29390a20f53e"></div>
+</section>
+    </div>
+    <div class="gutter"></div>
+</article>
+</div>
       <!-- footer -->
 <footer>
   <section>
